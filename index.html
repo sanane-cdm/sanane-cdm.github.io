@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Komik Karikatürler</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(-45deg, #39C5BB, #B6E2D3, #A0D995, #FFC3A1);
+      background-size: 400% 400%;
+      animation: gradientAnim 15s ease infinite;
+    }
+
+    @keyframes gradientAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .gallery {
+      margin: 40px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 1000px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Büyütme modal'ı */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Slm Komik Karikatürlere Hoş Geldiniz Gülmeye Hazır Mısınız</h1>
+
+  <div class="gallery">
+    <!-- Eski 3 resim -->
+    <img src="b3d15c3b-7f35-e311-ae67-14feb5cc13c9.jpg" alt="Karikatür 1" />
+    <img src="1.png" alt="Karikatür 2" />
+    <img src="f73c09f2f410847a0e80d44b514abf50.png" alt="Karikatür 3" />
+    <img src="4c87a747-7f35-e311-ae67-14feb5cc13c9.jpg" alt="Karikatür 4" />
+    <img src="a901d68b-7f35-e311-ae67-14feb5cc13c9.jpg" alt="Karikatür 5" />
+    <img src="b3c7475f-7f35-e311-ae67-14feb5cc13c9.jpg" alt="Karikatür 6" />
+    <img src="images.png" alt="Karikatür 7" />
+    <img src="6ca677b14141604cc9bd8abca00bf989.jpg" alt="karikatür 8">
+    <img src="headline.jpg" alt="karikatür 9">
+    <img src="ea2805b944ff6051bb097aaaf8662562.jpg" alt="karikatür 9">
+     <img src=" 16319068791_87696e9749_z.jpg" alt="karikatür 10">
+<img src="komik-karikatc3bcr-71-746-x-750.png" alt="karikatür 11">
+
+  </div>
+<div class="footer">designed by:Mehmet Ali
+
+  <!-- Modal (büyütülmüş resim) -->
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      };
+    });
+
+    modal.onclick = () => {
+      modal.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
